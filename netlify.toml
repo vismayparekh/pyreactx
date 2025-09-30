@@ -1,0 +1,21 @@
+# Netlify build config for the React client (Parcel)
+[build]
+  # Build from the frontend folder
+  base    = "myapp"
+  # Install deps and build the static site
+  command = "npm install && npm run build"
+  # Parcel outputs to dist/ by default
+  publish = "myapp/dist"
+
+[build.environment]
+  # We'll set API_BASE in the Netlify UI to your Render API URL
+  # Example: https://pyreactx-api.onrender.com
+  API_BASE = ""
+
+# Optional: set security/CORS headers for the built assets
+[[headers]]
+  for = "/*"
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy        = "no-referrer"
+  X-Frame-Options        = "DENY"
