@@ -1,0 +1,10 @@
+.git
+.gitignore
+.parcel-cache
+dist
+node_modules
+__pycache__/
+*.pyc
+.env
+docs
+myapp
