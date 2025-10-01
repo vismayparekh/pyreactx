@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 const API = window.API_BASE || process.env.API_BASE || "http://127.0.0.1:5000";
 
 
+
 /* ---------- helpers ---------- */
 async function api(path, { method = "GET", body, token } = {}) {
   const res = await fetch(`${API}${path}`, {
