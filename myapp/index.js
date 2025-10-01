@@ -1,7 +1,13 @@
+// KEEP THIS AT THE TOP OF THE FILE
+const API =
+  (typeof window !== "undefined" && window.API_BASE) ||
+  process.env.API_BASE ||
+  "http://127.0.0.1:5000";
+
 import React, { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom/client";
 
-const API = window.API_BASE || process.env.API_BASE || "http://127.0.0.1:5000";
+
 
 
 
