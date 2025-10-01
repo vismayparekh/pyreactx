@@ -1,10 +1,13 @@
 [build]
   base    = "myapp"
+  # 1) print the API_BASE so we can see it in the build log
+  # 2) write runtime-config.js with that value (quoted)
+  # 3) build the site
   command = "bash -lc 'echo Building with API_BASE=$API_BASE && printf \"window.API_BASE=\\\"%s\\\";\\n\" \"$API_BASE\" > runtime-config.js && npm ci && npm run build'"
   publish = "dist"
 
 [build.environment]
-  API_BASE = ""   # actual value is set in the Netlify UI
+  API_BASE = ""  # actual value is set in the Netlify UI
 
 [[headers]]
   for = "/*"
