@@ -4,9 +4,10 @@ const API =
   process.env.API_BASE ||
   "http://127.0.0.1:5000";
 
+  console.log("PyReactX: API base =", API);
+
 import React, { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom/client";
-
 
 
 
