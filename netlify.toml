@@ -1,14 +1,11 @@
-# Netlify build config for the frontend
 [build]
-  base    = "myapp"                 # run build from ./myapp
-  command = "npm install && npm run build"
-  publish = "dist"                  # <-- relative to base (NOT myapp/dist)
+  base    = "myapp"
+  command = "bash -lc 'echo Building with API_BASE=$API_BASE && npm ci && npm run build'"
+  publish = "dist"
 
 [build.environment]
-  # Set this in Netlify UI to your Render API URL (e.g., https://pyreactx-api.onrender.com)
-  API_BASE = ""
+  API_BASE = ""   # left blank here; actual value comes from the Netlify UI
 
-# Optional headers
 [[headers]]
   for = "/*"
   [headers.values]
